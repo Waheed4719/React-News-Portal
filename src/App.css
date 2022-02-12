@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+body {
+  /* background-color: rgb(10, 25, 41); */
+  background-color: white;
+  min-height: 100vh;
+  font-family: Poppins;
+}
+
+header {
+  background-color: #ffffff;
+}
+
+@media only screen and (max-width: 756px) {
+  .MuiTypography-root br {
+    display: none;
+  }
+}
