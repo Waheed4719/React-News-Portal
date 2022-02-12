@@ -44,13 +44,15 @@ function News () {
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
+            flexDirection: {sm: "column", xs: 'column', md: 'row'},
+            justifyContent: {sm: 'center', xs: 'center', md: 'space-between'},
+            alignItems: {sm: 'center'},
+            gap: 2,
             padding: '10px'
           }}
         >
           <Tabs
-            sx={{ width: 'fit-content', margin: '0 auto 0 0' }}
+            sx={{ width: 'fit-content' }}
             value={tab}
             onChange={handleChange}
             aria-label='disabled tabs example'
@@ -68,7 +70,7 @@ function News () {
           spacing={4}
         >
           {news?.map((article, index) => (
-            <Grid item key={index} xs={4}>
+            <Grid item key={index} xs={12} md={6} lg={4} sx={{ justifyContent: {xs: 'center'}, display: 'flex'}}>
               <Card article={article} />
             </Grid>
           ))}

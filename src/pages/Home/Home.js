@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import { Container, Typography } from '@mui/material'
-import SecondSection from './SecondSection'
+import SecondSection from './SecondSection/SecondSection'
 import { Navigate, useNavigate } from 'react-router-dom'
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -19,7 +19,7 @@ function Home () {
     <Container sx={{ paddingBottom: 6 }}>
       <Box
         sx={{
-          maxHeight: '700px',
+          maxHeight: '900px',
           height: '700px',
           display: 'flex',
           alignItem: 'center',
@@ -31,6 +31,7 @@ function Home () {
           sx={{
             maxWidth: { md: '580px', sm: '100%' },
             display: 'flex',
+            minWidth: '400px',
             flex: 1,
             flexDirection: 'column',
             alignItem: 'center',
@@ -69,6 +70,7 @@ function Home () {
         <Box
           sx={{
             maxWidth: { md: '580px', sm: '100%' },
+            minWidth: '400px',
             display: 'flex',
             flex: 1,
             flexDirection: 'column',
@@ -89,7 +91,6 @@ function Home () {
         </Box>
       </Box>
       <SecondSection />
-      {/* <TestGrid /> */}
     </Container>
   )
 }
