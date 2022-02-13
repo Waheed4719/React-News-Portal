@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip'
 
 export default function MediaCard({article}) {
     const {author, content, description, publishedAt, source, title, url, urlToImage} = article
@@ -17,9 +18,12 @@ export default function MediaCard({article}) {
         alt="article image"
       />
       <CardContent sx={{padding: 1}}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Tooltip title={title}>
+        <Typography gutterBottom variant="h5" component="div" sx={{'&:hover': {cursor: 'pointer'}}}>
           {title.substring(0,60)+"..."}
         </Typography>
+        </Tooltip>
+     
         <Typography variant="body2" color="text.secondary"  dangerouslySetInnerHTML={{
         __html:
         description?.substring(0,256) + '...'

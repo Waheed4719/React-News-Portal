@@ -102,7 +102,7 @@ function SignIn () {
             }}
           >
             <Typography component='h1' variant='h5'>
-              Sign in
+              Sign up
             </Typography>
 
             <Box

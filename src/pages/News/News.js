@@ -40,13 +40,13 @@ function News () {
   }
   return (
     <Container>
-      <Box sx={{ justifyContent: 'center' }}>
+      <Box sx={{ justifyContent: 'center', alignItems: 'center' }}>
         <Box
           sx={{
             display: 'flex',
             flexDirection: {sm: "column", xs: 'column', md: 'row'},
             justifyContent: {sm: 'center', xs: 'center', md: 'space-between'},
-            alignItems: {sm: 'center'},
+            alignItems: {xs: 'center',sm: 'center', md: 'center'},
             gap: 2,
             padding: '10px'
           }}
