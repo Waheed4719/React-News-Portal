@@ -4,16 +4,16 @@ import Common from './CommonUI'
 import { Route, Routes, Outlet } from 'react-router-dom'
 import Profile from './Profile'
 import MyBlogs from './MyBlogs'
+import CreateBlog from './CreatePost'
 function Index () {
-  
   return (
     <Box>
       <Common>
-        <h1>Dashboard</h1>
         <Routes>
           <Route path='/' element={<Profile />} />
           <Route path='profile' element={<Profile />} />
           <Route path='my-blogs' element={<MyBlogs />} />
+          <Route path='create-post' element={<CreateBlog />} />
         </Routes>
       </Common>
       <Outlet />

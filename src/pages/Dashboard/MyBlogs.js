@@ -1,8 +1,10 @@
 import React from 'react'
-
-function MyBlogs() {
+import { Link } from 'react-router-dom'
+function MyBlogs () {
   return (
-    <div>My-blogs</div>
+    <div>
+      <Link to='/dashboard/create-post'>Create Post</Link>
+    </div>
   )
 }
 
