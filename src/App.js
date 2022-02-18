@@ -10,6 +10,9 @@ import {
 } from 'react-router-dom'
 import SignIn from './pages/Authentication/SignIn'
 import SignUp from './pages/Authentication/SignUp'
+import Dashboard from './pages/Dashboard/Index'
+
+
 
 function App () {
   return (
@@ -19,6 +22,7 @@ function App () {
           <Switch>
             <Route exact path='/sign-in' element={<SignIn />} />
             <Route exact path='/sign-up' element={<SignUp />} />
+            <Route path='/dashboard/*' element={<Dashboard />} />
             <Route path='/*' element={<Routes />} />
           </Switch>
         </ThemeProvider>

@@ -1,6 +1,7 @@
 import { Grid, TextField } from '@mui/material'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Apikeys from '../../assets/keys.json'
 import Card from './Card'
 import Tabs from '@mui/material/Tabs'
@@ -10,6 +11,7 @@ import Container from '@mui/material/Container'
 import SearchBar from './SearchBar'
 
 function News () {
+  const navigate = useNavigate()
   const [tab, setTab] = useState('everything')
   const [news, setNews] = useState([])
   const [count, setCount] = useState(0)
@@ -21,7 +23,9 @@ function News () {
 
     try {
       let response = await axios.get(
-        `https://newsapi.org/v2/${tab}?q=${search?search:'all'}&from=2022-02-11&to=2022-02-11&sortBy=popularity&language=en&apiKey=${NEWS_API_KEY}`
+        `https://newsapi.org/v2/${tab}?q=${
+          search ? search : 'all'
+        }&sortBy=popularity&language=en&apiKey=${NEWS_API_KEY}`
       )
       if (response?.data?.articles) {
         setCount(response?.data?.totalResults ?? 0)
@@ -44,9 +48,9 @@ function News () {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: {sm: "column", xs: 'column', md: 'row'},
-            justifyContent: {sm: 'center', xs: 'center', md: 'space-between'},
-            alignItems: {xs: 'center',sm: 'center', md: 'center'},
+            flexDirection: { sm: 'column', xs: 'column', md: 'row' },
+            justifyContent: { sm: 'center', xs: 'center', md: 'space-between' },
+            alignItems: { xs: 'center', sm: 'center', md: 'center' },
             gap: 2,
             padding: '10px'
           }}
@@ -60,7 +64,7 @@ function News () {
             <Tab label='Everything' value='everything' />
             <Tab label='Top Headlines' value='top-headlines' />
           </Tabs>
-          <SearchBar search={search} setSearch = {setSearch} />
+          <SearchBar search={search} setSearch={setSearch} />
         </Box>
 
         <Grid
@@ -70,7 +74,14 @@ function News () {
           spacing={4}
         >
           {news?.map((article, index) => (
-            <Grid item key={index} xs={12} md={6} lg={4} sx={{ justifyContent: {xs: 'center'}, display: 'flex'}}>
+            <Grid
+              item
+              key={index}
+              xs={12}
+              md={6}
+              lg={4}
+              sx={{ justifyContent: { xs: 'center' }, display: 'flex' }}
+            >
               <Card article={article} />
             </Grid>
           ))}

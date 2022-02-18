@@ -4,7 +4,6 @@ import Menu from '@mui/material/Menu'
 import { Link } from 'react-router-dom'
 
 function RenderMenu ({ anchorEl, menuId, isMenuOpen, handleMenuClose }) {
- 
   return (
     <Menu
       anchorEl={anchorEl}
@@ -23,47 +22,39 @@ function RenderMenu ({ anchorEl, menuId, isMenuOpen, handleMenuClose }) {
     >
       {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
-
-<MenuItem>
-        <Link
-          style={{
-            textDecoration: 'none',
-            color: 'inherit',
-            width: '100%',
-            height: '100%'
-          }}
-          to='/news'
-        >
-          News
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link
-          style={{
-            textDecoration: 'none',
-            color: 'inherit',
-            width: '100%',
-            height: '100%'
-          }}
-          to='/sign-in'
-        >
-          Sign in
-        </Link>
-      </MenuItem>
-      <MenuItem >
-        <Link
-          style={{
-            textDecoration: 'none',
-            color: 'inherit',
-            width: '100%',
-            height: '100%'
-          }}
-          to='/sign-up'
-        >
-          Sign up
-        </Link>
-      </MenuItem>
-      
+      <Link
+        style={{
+          textDecoration: 'none',
+          color: 'inherit',
+          width: '100%',
+          height: '100%'
+        }}
+        to='/news'
+      >
+        <MenuItem>News</MenuItem>
+      </Link>
+      <Link
+        style={{
+          textDecoration: 'none',
+          color: 'inherit',
+          width: '100%',
+          height: '100%'
+        }}
+        to='/sign-in'
+      >
+        <MenuItem>Sign in</MenuItem>
+      </Link>
+      <Link
+        style={{
+          textDecoration: 'none',
+          color: 'inherit',
+          width: '100%',
+          height: '100%'
+        }}
+        to='/sign-up'
+      >
+        <MenuItem>Sign up</MenuItem>
+      </Link>
     </Menu>
   )
 }

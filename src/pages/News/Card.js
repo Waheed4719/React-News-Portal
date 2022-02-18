@@ -33,7 +33,7 @@ export default function MediaCard({article}) {
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={() => window.location.assign(article.url)}>Learn More</Button>
       </CardActions>
     </Card>
   );
